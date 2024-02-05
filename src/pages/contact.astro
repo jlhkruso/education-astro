@@ -2,8 +2,13 @@
 import DefaultLayout from "../layouts/default.astro";
 import Banner from "../components/banner.astro";
 const title = "Contact: Banner prop from parent";
+const response = await fetch("https://randomuser.me/api/");
+const data = await response.json();
+const randomUser = data.results[0];
 ---
 
 <DefaultLayout title={title}>
   <Banner title={title} />
+  <h2>Data from external endpoint</h2>
+  <b>{randomUser.name.first} {randomUser.name.last}</b>
 </DefaultLayout>

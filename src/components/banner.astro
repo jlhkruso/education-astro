@@ -9,13 +9,14 @@ interface Props {
 const { title, bodytext = "default propf", image } = Astro.props;
 ---
 
-<!-- Use props and other variables from the component script: -->
-<p>{title}</p>
+<div class="mt-10 mb-10">
+  <p>{title}</p>
 
-{
-  image && (
-    <Image src={image} alt="" width="1600" height="900" loading="eager" />
-  )
-}
+  {
+    image && (
+      <Image src={image} alt="" width="1600" height="900" loading="eager" />
+    )
+  }
 
-{bodytext && <p>{bodytext}</p>}
+  {bodytext && <p>{bodytext}</p>}
+</div>

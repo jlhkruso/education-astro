@@ -1,17 +1,17 @@
 ---
 const nav = [
-  { path: "/", title: "Home" },
-  { path: "/about", title: "About (json data here)" },
-  { path: "/contact", title: "Contact" },
+  { path: "/", title: "Home (vue component)" },
+  { path: "/about", title: "About (json data)" },
+  { path: "/contact", title: "Contact (external data)" },
 ];
 ---
 
-<header class="m-10">
+<header class="mb-10 bg-slate-700 text-white">
   <nav>
     <ul>
       {
         nav.map((data) => (
-          <li>
+          <li class="inline-block ml-5 mr-5">
             <a href={data.path}>{data.title}</a>
           </li>
         ))

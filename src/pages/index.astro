@@ -1,12 +1,15 @@
 ---
 import DefaultLayout from "../layouts/default.astro";
 import Banner from "../components/banner.astro";
+import VueTest from "../components/vueTest.vue";
 const title = "Frontpage: Banner prop from parent";
 ---
 
 <DefaultLayout title={title}>
   <div class="grid-container">
     <Banner title={title} />
-    <div>another</div>
+    <div class="mt-10">
+      <VueTest client:only="vue" />
+    </div>
   </div>
 </DefaultLayout>
