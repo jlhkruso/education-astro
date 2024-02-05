@@ -1,19 +1,21 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
   title: string;
   bodytext?: string;
+  image?: string;
 }
-const myFavoritePokemon = [{ name: "Pikachu" }];
-const { title, bodytext = "default propf" } = Astro.props;
-const useClassNames = true;
+
+const { title, bodytext = "default propf", image } = Astro.props;
 ---
 
 <!-- Use props and other variables from the component script: -->
 <p>{title}</p>
 
-<!-- Mix HTML with JavaScript expressions, similar to JSX: -->
-<ul class:list={["add", title, { "class-Names": useClassNames }]}>
-  {myFavoritePokemon.map((data) => <li>{data.name}</li>)}
-</ul>
+{
+  image && (
+    <Image src={image} alt="" width="1600" height="900" loading="eager" />
+  )
+}
 
 {bodytext && <p>{bodytext}</p>}
