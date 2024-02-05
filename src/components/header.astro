@@ -1,0 +1,21 @@
+---
+const nav = [
+  { path: "/", title: "Home" },
+  { path: "/about", title: "About" },
+  { path: "/contact", title: "Contact" },
+];
+---
+
+<header>
+  <nav>
+    <ul>
+      {
+        nav.map((data) => (
+          <li>
+            <a href={data.path}>{data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

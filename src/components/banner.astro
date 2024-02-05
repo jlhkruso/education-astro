@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  bodytext?: string;
+}
+const myFavoritePokemon = [{ name: "Pikachu" }];
+const { title, bodytext = "default propf" } = Astro.props;
+const useClassNames = true;
+---
+
+<!-- Use props and other variables from the component script: -->
+<p>{title}</p>
+
+<!-- Mix HTML with JavaScript expressions, similar to JSX: -->
+<ul class:list={["add", title, { "class-Names": useClassNames }]}>
+  {myFavoritePokemon.map((data) => <li>{data.name}</li>)}
+</ul>
+
+{bodytext && <p>{bodytext}</p>}

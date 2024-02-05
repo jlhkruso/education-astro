@@ -1,12 +1,9 @@
 ---
 import DefaultLayout from "../layouts/default.astro";
 import Banner from "../components/banner.astro";
-const title = "Frontpage: Banner prop from parent";
+const title = "Contact: Banner prop from parent";
 ---
 
 <DefaultLayout title={title}>
-  <div class="grid-container">
-    <Banner title={title} />
-    <div>another</div>
-  </div>
+  <Banner title={title} />
 </DefaultLayout>

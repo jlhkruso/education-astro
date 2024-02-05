@@ -1,0 +1,17 @@
+---
+interface IData {
+  title: string;
+  bodytext: string;
+  image: string;
+}
+import DefaultLayout from "../layouts/default.astro";
+import Banner from "../components/banner.astro";
+import data from "../data/about.json";
+import { Image } from "astro:assets";
+const { title, bodytext, image } = data as IData;
+---
+
+<DefaultLayout title={title}>
+  <Banner title={title} bodytext={bodytext} />
+  {image && <Image src={image} alt="" width="1600" height="900" />}
+</DefaultLayout>
